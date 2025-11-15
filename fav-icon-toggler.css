@@ -49,6 +49,13 @@ body {
 }
 
 .heart-btn:hover {
+    transform: scale(1.5);
+}
+.heart-btn:active {
     color: red;
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+.filled {
+    color: red;
 }
