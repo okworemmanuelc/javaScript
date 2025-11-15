@@ -1,0 +1,54 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 1, 55);
+}
+.shopping-cart {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 100px auto;
+}
+
+.shopping-cart h1 {
+    text-align: center;
+}
+
+.item-list {
+    padding: 0;
+    margin: 1rem 2rem;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item li {
+    list-style: none;
+}
+
+.heart-btn {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: grey;
+}
+
+.heart-btn:hover {
+    color: red;
+    transform: scale(1.2);
+}
