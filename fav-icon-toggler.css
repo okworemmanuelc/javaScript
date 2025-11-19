@@ -53,4 +53,5 @@ li {
 
 .filled {
     color: red;
+    transform: scale(.8);
 }
