@@ -8,12 +8,13 @@ images.forEach(image => {
 
         lightboxImage.src = image.dataset.fullSrc;
         lightboxImage.alt = image.alt;
-        if(lightBoxviewer.style.display === 'none'){
-            lightBoxviewer.style.display = 'flex';
-        } else {
-            lightBoxviewer.style.display = 'none';
-        }
+        lightBoxviewer.style.display = 'flex';
     })
+    window.addEventListener('click', (e) => {
+    if (e.target === lightBoxviewer) {
+        lightBoxviewer.style.display = 'none';
+    }
+});
     });
 
 closeBtn.addEventListener('click', () => {
@@ -21,3 +22,4 @@ closeBtn.addEventListener('click', () => {
     lightboxImage.src = '';
     lightboxImage.alt = '';
 });
+
