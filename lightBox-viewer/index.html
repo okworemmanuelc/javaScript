@@ -3,29 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Lightbox Viewer</title>
   </head>
 
   <body>
+    <h1 class="gallery-title">Museum Gallery</h1>
     <div class="gallery">
       <img
         class="gallery-item"
         src="https://cdn.freecodecamp.org/curriculum/labs/stonehenge-thumbnail.jpg"
         alt=""
+        data-full-src="https://cdn.freecodecamp.org/curriculum/labs/stonehenge.jpg"
       />
       <img
         class="gallery-item"
         src="https://cdn.freecodecamp.org/curriculum/labs/storm-thumbnail.jpg"
         alt=""
+        data-full-src="https://cdn.freecodecamp.org/curriculum/labs/storm.jpg"
       />
       <img
         src="https://cdn.freecodecamp.org/curriculum/labs/trees-thumbnail.jpg"
         alt=""
         class="gallery-item"
+        data-full-src="https://cdn.freecodecamp.org/curriculum/labs/trees.jpg"
       />
     </div>
     <div class="lightbox">
-      <button id="close-btn"></button>
+      <button id="close-btn">&times;</button>
+      <img class="lightbox-image" src="" alt="" />
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
