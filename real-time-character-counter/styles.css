@@ -1,8 +1,13 @@
+/*
+ * Responsive and Styled Character Counter
+ * Using a simple ID + Class selector for high specificity error styling.
+ */
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     background-color: #e0c8f9;
 }
 
@@ -11,47 +16,85 @@ body {
     flex-direction: column;
     align-items: center;
     max-width: 600px;
-    margin: 200px auto;
+    /* CHANGE: Use viewport height (vh) for adaptive vertical centering on large screens */
+    margin: 10vh auto;
     padding: 20px;
     background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
 }
 
 h1 {
     margin-bottom: 20px;
-    color: #006ba0;
+    color: #4a235a; /* Darker purple for contrast */
 }
 
 textarea {
     width: 100%;
     height: 150px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 10px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    font-family: inherit; /* Use body font or a standard monospace for code/text input */
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #c0a8e0;
+    border-radius: 8px;
     resize: none;
     box-sizing: border-box;
+    transition: border-color 0.3s;
 }
 
 textarea:focus {
     outline: none;
+    border-color: #006ba0;
+    box-shadow: 0 0 0 3px rgba(0, 107, 160, 0.2);
 }
 
-.counter p {
-    margin-top: 10px;
+/* Base styles for the counter display */
+#char-count {
+    font-weight: 600;
+    color: #006ba0;
+    margin-top: 15px;
     font-size: 18px;
-    color: #555;
+    transition: color 0.2s ease-in-out;
+    display: block; /* Ensure it takes up its own line */
 }
 
-p span {
-    font-weight: bold;
-   color: #006ba0;
+/* FIX: Use ID + Class selector for high specificity.
+ * This ensures the red color overrides the default blue color when the .error class is added.
+ */
+#char-count.error {
+    color: #c0392b; /* A strong red color for the error state */
+    animation: shake 0.5s;
 }
 
-.error {
-    color: red;
-    margin-top: 10px;
-    font-size: 18px;
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        /* Less margin on mobile to maximize screen usage */
+        margin: 5vh 10px;
+        width: 95%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    textarea, #char-count {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        margin: 2vh 5px; 
+    }
+}
+
+/* Simple animation for when the max character limit is hit */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
 }
