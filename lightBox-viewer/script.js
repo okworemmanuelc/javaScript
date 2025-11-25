@@ -18,6 +18,6 @@ closeBtn.addEventListener('click', () => {
     lightboxImage.alt = '';
 });
 
-lightBoxviewer.addEventListener('click', (e) => {
+lightBoxviewer.addEventListener('click', () => {
         lightBoxviewer.style.display = 'none';
 });
