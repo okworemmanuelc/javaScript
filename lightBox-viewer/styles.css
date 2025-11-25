@@ -25,7 +25,7 @@ h1{
     margin-top: 20px;
 }
 
-.gallery img {
+.gallery-item {
     width: 250px;
     height: 300px;
     object-fit: cover;
@@ -35,7 +35,7 @@ h1{
     transition: transform 0.2s, border-color 0.2s;
 }
 
-.gallery img:hover {
+.gallery-item:hover {
     transform: scale(1.05);
     border-color: #777;
    
@@ -52,15 +52,15 @@ h1{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.322);
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-.lightbox img {
-    width: 95%;
-    height: 95%;
+#lightbox-image {
+    width: 80%;
+    height: 80%;
     border: 5px solid #fff;
     border-radius: 10px;
 }

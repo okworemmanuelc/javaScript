@@ -1,7 +1,7 @@
 const lightBoxviewer = document.querySelector('.lightbox');
 const images = document.querySelectorAll('.gallery-item');
 const closeBtn = document.getElementById('close-btn');
-const lightboxImage = document.querySelector('.lightbox-image');
+const lightboxImage = document.querySelector('#lightbox-image');
 
 images.forEach(image => {
     image.addEventListener('click', () => {
@@ -10,11 +10,6 @@ images.forEach(image => {
         lightboxImage.alt = image.alt;
         lightBoxviewer.style.display = 'flex';
     })
-    window.addEventListener('click', (e) => {
-    if (e.target === lightBoxviewer) {
-        lightBoxviewer.style.display = 'none';
-    }
-});
     });
 
 closeBtn.addEventListener('click', () => {
@@ -23,3 +18,6 @@ closeBtn.addEventListener('click', () => {
     lightboxImage.alt = '';
 });
 
+lightBoxviewer.addEventListener('click', (e) => {
+        lightBoxviewer.style.display = 'none';
+});
